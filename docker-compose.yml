@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  myproject:                  # Container name
+    image: tomcat-myproject   # Specify the name of the image for the container
+    build:
+      context: .              # Build the tomcat-myproject image from the root of this directory
+      dockerfile: Dockerfile  # Call your dockerfile something custom here. This way you can use multiple dockerfiles.
+    ports:
+      - '8083:8443'           # Expose https port 8443 from the container (tomcat-9-server.xml line 75) 
+      - '8000:8000'           # Expose Debug port 8000 from the container to my app
+    volumes:
+      - ./myproject.war:/usr/local/tomcat/webapps/myproject.war
+                              # Create a shared folder between the tomcat container and the host.
+                              # Any changes made to the host file will reflect in the container and visa versa.
