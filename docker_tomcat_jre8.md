@@ -7,7 +7,7 @@
 
 *This process will vary slightly between windows and mac.*  
 * If(windows) you will need to create a custom Ubuntu VM in VirtualBox.  
-* The steps for this are in windows_docker.docx
+* The steps for this are in "Docker Setup on Windows.docx"
 * Special thanks to Jamie Jackson for discovering this solution, and to Hootan Vazhbakht for documenting the steps
 
 #### Prerequisites:
