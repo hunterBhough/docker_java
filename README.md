@@ -1,5 +1,5 @@
-#Create a cross-platform java development environment with Docker 
-###Here is a high level overview of the steps we will take:
+# Create a cross-platform java development environment with Docker  
+### Here is a high level overview of the steps we will take:
 1. Set up project structure
 2. Explain modifications
 3. Automate deployment using shell scripts, called from a Makefile
@@ -44,7 +44,7 @@
         * remember to search the provided template for 'TODO'
         * to find and modify the correct blocks
 
-##Step 2: How do the files connect?
+## Step 2: How do the files connect?
 1. docker-compose.yml 
 - builds the custom image specified in Dockerfile
 - maps ports from the docker container to the host machine  
@@ -73,7 +73,7 @@ and painless environment setup when onboarding.
 plain enough for someone with minimal technical expertise, 
 but advanced enough for an expert to be able to expand upon your work.  
 
-##Step 3: Automate Deployment
+## Step 3: Automate Deployment
 
     1. In the project_root, create a directory for ./scripts, and a Makefile
     $ tree
@@ -83,7 +83,7 @@ but advanced enough for an expert to be able to expand upon your work.
         ├── web  
         ├── (your_other_stuff)
         └── Makefile  
-####Example Makefile
+#### Example Makefile
     war:
     	bash scripts/make_war.sh  
       
@@ -93,7 +93,7 @@ but advanced enough for an expert to be able to expand upon your work.
     $ make war  
     -or-  
     $ make reload
-####Example shell script (make_war.sh -> called by $make war)
+#### Example shell script (make_war.sh -> called by $make war)
     #!/bin/sh
     
     ant -f ../myProjBuild.xml && \
@@ -101,14 +101,14 @@ but advanced enough for an expert to be able to expand upon your work.
     cd ../docker && \
     docker-compose down && \
     docker-compose up -d --build
-####Example shell script (reload.sh -> called by $make reload)
+#### Example shell script (reload.sh -> called by $make reload)
     #!/bin/sh
     
     ant -f ../myProjBuild.xml && \
     cp ../myProjDist/myproject.war ../docker && \
     cd ../docker && \
     docker restart docker_myproject_1
-##Step 4: Debugging in IntelliJ IDEA
+## Step 4: Debugging in IntelliJ IDEA
 1. Run > Debug > Edit Configurations
 2. Select "remote"
 3. Port: 8000 (or wherever you set the port to expose in your docker-compose.yml)
