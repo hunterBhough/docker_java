@@ -14,8 +14,8 @@
 - ant
 - make
 - keytool
-- JDK
-##Step 1: The Setup  
+- JDK  
+## Step 1: The Setup  
     1. Begin by opening the templates and understanding the comments provided
         in this example for Dockerfile and docker-compose.yml.
         * in tomcat-9-server.xml, search for 'TODO' to find 
